@@ -5,227 +5,2278 @@
 		<title>Merry Xmas Gia Huệ</title>
 		<!--©2021 VANTBHP-->
 		<style>
-			@import url('https://fonts.googleapis.com/css?family=Bungee');
-$bg: #000000;
-$lights-width: 2;
-$lights-count: 100;
-$font-family:'Bungee', cursive;
-$font-size: 3em;
-
-@mixin light-border-radius($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
-
-
-@mixin text-style{
-  $color : rgba(random(255), random(255), random(255), 1);
-  $color2 : rgba(random(255), random(255), random(255), 1);
-      display:block;
-      color: $color;
-      text-shadow: $color2 1px 1px 1px,
-        $color2 2px 2px 2px,
-        $color2 3px 3px 3px,
-        $color 0px 0px 20px;
-      text-align:center;
-      font:{
-        size:$font-size;
-        family:$font-family;
-      }
-  animation: flyin 3s 1s ease-out both infinite;
-}
-
+			@import url("https://fonts.googleapis.com/css?family=Bungee");
 body,
 html {
   padding: 0;
   margin: 0;
   position: relative;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  background : {
-    color: $bg;
-  }
-  
-  
-  
- 
-  .merry-chrismas{
-    position:absolute;
-    
-  } 
-  
-  @keyframes flyin {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000000;
+}
+body .merry-chrismas,
+html .merry-chrismas {
+  position: absolute;
+}
+@keyframes flyin {
   0%, 100% {
     transform: perspective(0em) rotateX(0deg) translateY(0);
   }
   50% {
     transform: perspective(0em) rotateX(0deg) translateY(-20px);
   }
-  
 }
-
-@for $i from 1 through 8 {
-  
-  .merry-chrismas-#{$i}{
-   
-    &:before{
-      content:"Merry Christmas Gia Huệ";
-      @include text-style;
-   }
-    
-    &:after{
-      content:"";
-      @include text-style;
-   }
-    
+body .merry-chrismas-1:before,
+html .merry-chrismas-1:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #58b7fd;
+  text-shadow: #7863d8 1px 1px 1px, #7863d8 2px 2px 2px, #7863d8 3px 3px 3px, #58b7fd 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
 }
-  
-     .merry-chrismas-#{$i} {
-       animation: text-blink-#{$i} 0.5s linear alternate infinite;
-       animation-delay: $i * 0s;
-      }
-      .merry-chrismas-#{$i} {
-        @keyframes text-blink-#{$i} {
-           from { opacity:0; }
-           to { opacity:1; }
-      }
-    }
+body .merry-chrismas-1:after,
+html .merry-chrismas-1:after {
+  content: "";
+  display: block;
+  color: #10cfbb;
+  text-shadow: #cffd1e 1px 1px 1px, #cffd1e 2px 2px 2px, #cffd1e 3px 3px 3px, #10cfbb 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-1,
+html .merry-chrismas-1 {
+  animation: text-blink-1 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-1 {
+  from {
+    opacity: 0;
   }
-  
-  
-
-  .lights {
-    width: $lights-width+px;
-    height: $lights-width+px;
-    @include light-border-radius(50%);
-  }
-
-  @for $i from 1 through $lights-count {
-    .light-#{$i} {
-      position: absolute;
-      top:  percentage(random(100)/100);
-      left: percentage(random(100)/100);
-      background: {
-        color: rgba(random(255), random(255), random(255), 1);
-      }
-      
-        animation: blink-#{$i} 0.5s ease-in infinite;
-        animation-delay: $i * 0s;
-      
-      @keyframes blink-#{$i} {
-      from { opacity: 0; transform: perspective(0em) rotateX(0deg) translateY(0); }
-      to { opacity: 1; transform: perspective(0em) rotateX(0deg) translateY(-20px); }
-       }
-    }
+  to {
+    opacity: 1;
   }
 }
-
-.author{
-        position:absolute;
-        bottom:0;
-        right:0;
-        font-size:15px;
-        padding:20px;
-        text-align:center;
-       
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-        
-        text-shadow: 2px 2px 3px rgba(120,0,20,.9);
-        font-style:italic;
-        padding:1em;
-        color:#700;
-        color:rgba(120,0,20,.9);
-    }
-    .author a, .author a:active, .author a:hover, .author a:visited{
-        text-decoration:none;
-        color:rgba(120,0,20,.9);
-    }
-    .author .heart{
-        color: #e25555;
-         text-shadow: 2px 2px 3px #e25555;
-        font-size:30px;
-    }
-
-
-@media screen 
-  and (device-width: 360px) {
-  $font-size: 3em;
-    
-    .merry-chrismas{
-      &:after{
-        font:{
-          size:$font-size !important;
-        }
-      }
-      
-      &:before{
-        font:{
-          size:$font-size !important;
-        }
-      }
-    }
+body .merry-chrismas-2:before,
+html .merry-chrismas-2:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #018915;
+  text-shadow: #bf20d8 1px 1px 1px, #bf20d8 2px 2px 2px, #bf20d8 3px 3px 3px, #018915 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-2:after,
+html .merry-chrismas-2:after {
+  content: "";
+  display: block;
+  color: #894602;
+  text-shadow: #9043cf 1px 1px 1px, #9043cf 2px 2px 2px, #9043cf 3px 3px 3px, #894602 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-2,
+html .merry-chrismas-2 {
+  animation: text-blink-2 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-3:before,
+html .merry-chrismas-3:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #d1a9d4;
+  text-shadow: #fc91fa 1px 1px 1px, #fc91fa 2px 2px 2px, #fc91fa 3px 3px 3px, #d1a9d4 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-3:after,
+html .merry-chrismas-3:after {
+  content: "";
+  display: block;
+  color: #a7c817;
+  text-shadow: #f7a6d3 1px 1px 1px, #f7a6d3 2px 2px 2px, #f7a6d3 3px 3px 3px, #a7c817 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-3,
+html .merry-chrismas-3 {
+  animation: text-blink-3 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-4:before,
+html .merry-chrismas-4:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #f28cc7;
+  text-shadow: #580f5b 1px 1px 1px, #580f5b 2px 2px 2px, #580f5b 3px 3px 3px, #f28cc7 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-4:after,
+html .merry-chrismas-4:after {
+  content: "";
+  display: block;
+  color: #0f7546;
+  text-shadow: #09f714 1px 1px 1px, #09f714 2px 2px 2px, #09f714 3px 3px 3px, #0f7546 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-4,
+html .merry-chrismas-4 {
+  animation: text-blink-4 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-4 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-5:before,
+html .merry-chrismas-5:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #926cb6;
+  text-shadow: #438bc5 1px 1px 1px, #438bc5 2px 2px 2px, #438bc5 3px 3px 3px, #926cb6 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-5:after,
+html .merry-chrismas-5:after {
+  content: "";
+  display: block;
+  color: #82cb7a;
+  text-shadow: #b7a2d4 1px 1px 1px, #b7a2d4 2px 2px 2px, #b7a2d4 3px 3px 3px, #82cb7a 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-5,
+html .merry-chrismas-5 {
+  animation: text-blink-5 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-5 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-6:before,
+html .merry-chrismas-6:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #dad3a5;
+  text-shadow: #f888f2 1px 1px 1px, #f888f2 2px 2px 2px, #f888f2 3px 3px 3px, #dad3a5 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-6:after,
+html .merry-chrismas-6:after {
+  content: "";
+  display: block;
+  color: #4be396;
+  text-shadow: #ccca65 1px 1px 1px, #ccca65 2px 2px 2px, #ccca65 3px 3px 3px, #4be396 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-6,
+html .merry-chrismas-6 {
+  animation: text-blink-6 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-6 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-7:before,
+html .merry-chrismas-7:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #38a3fc;
+  text-shadow: #02e6db 1px 1px 1px, #02e6db 2px 2px 2px, #02e6db 3px 3px 3px, #38a3fc 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-7:after,
+html .merry-chrismas-7:after {
+  content: "";
+  display: block;
+  color: #ce2e71;
+  text-shadow: #c2a747 1px 1px 1px, #c2a747 2px 2px 2px, #c2a747 3px 3px 3px, #ce2e71 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-7,
+html .merry-chrismas-7 {
+  animation: text-blink-7 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-7 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .merry-chrismas-8:before,
+html .merry-chrismas-8:before {
+  content: "Merry Christmas Gia Huệ";
+  display: block;
+  color: #02e5c3;
+  text-shadow: #20369b 1px 1px 1px, #20369b 2px 2px 2px, #20369b 3px 3px 3px, #02e5c3 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-8:after,
+html .merry-chrismas-8:after {
+  content: "";
+  display: block;
+  color: #4fce37;
+  text-shadow: #f9ec0f 1px 1px 1px, #f9ec0f 2px 2px 2px, #f9ec0f 3px 3px 3px, #4fce37 0px 0px 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Bungee", cursive;
+  animation: flyin 3s 1s ease-out both infinite;
+}
+body .merry-chrismas-8,
+html .merry-chrismas-8 {
+  animation: text-blink-8 0.5s linear alternate infinite;
+  animation-delay: 0s;
+}
+@keyframes text-blink-8 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .lights,
+html .lights {
+  width: 2px;
+  height: 2px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+body .light-1,
+html .light-1 {
+  position: absolute;
+  top: 18%;
+  left: 80%;
+  background-color: #2cfc63;
+  animation: blink-1 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-1 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-2,
+html .light-2 {
+  position: absolute;
+  top: 49%;
+  left: 40%;
+  background-color: #fc9e15;
+  animation: blink-2 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-2 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-3,
+html .light-3 {
+  position: absolute;
+  top: 2%;
+  left: 16%;
+  background-color: #912659;
+  animation: blink-3 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-3 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-4,
+html .light-4 {
+  position: absolute;
+  top: 64%;
+  left: 90%;
+  background-color: #a9d5fb;
+  animation: blink-4 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-4 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-5,
+html .light-5 {
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  background-color: #dd531e;
+  animation: blink-5 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-5 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-6,
+html .light-6 {
+  position: absolute;
+  top: 31%;
+  left: 83%;
+  background-color: #6aa948;
+  animation: blink-6 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-6 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-7,
+html .light-7 {
+  position: absolute;
+  top: 21%;
+  left: 97%;
+  background-color: #90f69a;
+  animation: blink-7 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-7 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-8,
+html .light-8 {
+  position: absolute;
+  top: 7%;
+  left: 33%;
+  background-color: #2c5e50;
+  animation: blink-8 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-8 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-9,
+html .light-9 {
+  position: absolute;
+  top: 49%;
+  left: 3%;
+  background-color: #d65b79;
+  animation: blink-9 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-9 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-10,
+html .light-10 {
+  position: absolute;
+  top: 94%;
+  left: 85%;
+  background-color: #063727;
+  animation: blink-10 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-10 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-11,
+html .light-11 {
+  position: absolute;
+  top: 92%;
+  left: 27%;
+  background-color: #caef22;
+  animation: blink-11 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-11 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-12,
+html .light-12 {
+  position: absolute;
+  top: 45%;
+  left: 60%;
+  background-color: #2bd263;
+  animation: blink-12 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-12 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-13,
+html .light-13 {
+  position: absolute;
+  top: 62%;
+  left: 47%;
+  background-color: #e4f04b;
+  animation: blink-13 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-13 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-14,
+html .light-14 {
+  position: absolute;
+  top: 60%;
+  left: 4%;
+  background-color: #4843e3;
+  animation: blink-14 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-14 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-15,
+html .light-15 {
+  position: absolute;
+  top: 39%;
+  left: 46%;
+  background-color: #b4c1c9;
+  animation: blink-15 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-15 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-16,
+html .light-16 {
+  position: absolute;
+  top: 91%;
+  left: 73%;
+  background-color: #7205ce;
+  animation: blink-16 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-16 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-17,
+html .light-17 {
+  position: absolute;
+  top: 28%;
+  left: 72%;
+  background-color: #d69086;
+  animation: blink-17 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-17 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-18,
+html .light-18 {
+  position: absolute;
+  top: 41%;
+  left: 92%;
+  background-color: #e558f2;
+  animation: blink-18 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-18 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-19,
+html .light-19 {
+  position: absolute;
+  top: 18%;
+  left: 72%;
+  background-color: #9503b4;
+  animation: blink-19 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-19 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-20,
+html .light-20 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  background-color: #159e3f;
+  animation: blink-20 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-20 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-21,
+html .light-21 {
+  position: absolute;
+  top: 97%;
+  left: 39%;
+  background-color: #093677;
+  animation: blink-21 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-21 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-22,
+html .light-22 {
+  position: absolute;
+  top: 22%;
+  left: 14%;
+  background-color: #5a2f50;
+  animation: blink-22 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-22 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-23,
+html .light-23 {
+  position: absolute;
+  top: 43%;
+  left: 1%;
+  background-color: #f3ac12;
+  animation: blink-23 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-23 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-24,
+html .light-24 {
+  position: absolute;
+  top: 93%;
+  left: 35%;
+  background-color: #bf8b60;
+  animation: blink-24 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-24 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-25,
+html .light-25 {
+  position: absolute;
+  top: 26%;
+  left: 12%;
+  background-color: #75d407;
+  animation: blink-25 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-25 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-26,
+html .light-26 {
+  position: absolute;
+  top: 48%;
+  left: 69%;
+  background-color: #3f4863;
+  animation: blink-26 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-26 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-27,
+html .light-27 {
+  position: absolute;
+  top: 62%;
+  left: 12%;
+  background-color: #f54204;
+  animation: blink-27 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-27 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-28,
+html .light-28 {
+  position: absolute;
+  top: 14%;
+  left: 74%;
+  background-color: #1236cf;
+  animation: blink-28 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-28 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-29,
+html .light-29 {
+  position: absolute;
+  top: 37%;
+  left: 87%;
+  background-color: #d94e05;
+  animation: blink-29 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-29 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-30,
+html .light-30 {
+  position: absolute;
+  top: 86%;
+  left: 14%;
+  background-color: #3b7ba4;
+  animation: blink-30 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-30 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-31,
+html .light-31 {
+  position: absolute;
+  top: 68%;
+  left: 84%;
+  background-color: #7d19dd;
+  animation: blink-31 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-31 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-32,
+html .light-32 {
+  position: absolute;
+  top: 100%;
+  left: 2%;
+  background-color: #f7c980;
+  animation: blink-32 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-32 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-33,
+html .light-33 {
+  position: absolute;
+  top: 5%;
+  left: 48%;
+  background-color: #e4f4ad;
+  animation: blink-33 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-33 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-34,
+html .light-34 {
+  position: absolute;
+  top: 33%;
+  left: 36%;
+  background-color: #15a2f4;
+  animation: blink-34 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-34 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-35,
+html .light-35 {
+  position: absolute;
+  top: 84%;
+  left: 57%;
+  background-color: #5c7157;
+  animation: blink-35 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-35 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-36,
+html .light-36 {
+  position: absolute;
+  top: 92%;
+  left: 1%;
+  background-color: #2f04a0;
+  animation: blink-36 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-36 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-37,
+html .light-37 {
+  position: absolute;
+  top: 97%;
+  left: 30%;
+  background-color: #750f47;
+  animation: blink-37 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-37 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-38,
+html .light-38 {
+  position: absolute;
+  top: 74%;
+  left: 64%;
+  background-color: #cdca70;
+  animation: blink-38 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-38 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-39,
+html .light-39 {
+  position: absolute;
+  top: 88%;
+  left: 70%;
+  background-color: #f2a126;
+  animation: blink-39 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-39 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-40,
+html .light-40 {
+  position: absolute;
+  top: 25%;
+  left: 94%;
+  background-color: #4a14a6;
+  animation: blink-40 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-40 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-41,
+html .light-41 {
+  position: absolute;
+  top: 35%;
+  left: 27%;
+  background-color: #39a21d;
+  animation: blink-41 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-41 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-42,
+html .light-42 {
+  position: absolute;
+  top: 79%;
+  left: 78%;
+  background-color: #98ec91;
+  animation: blink-42 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-42 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-43,
+html .light-43 {
+  position: absolute;
+  top: 82%;
+  left: 16%;
+  background-color: #e1e5dd;
+  animation: blink-43 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-43 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-44,
+html .light-44 {
+  position: absolute;
+  top: 59%;
+  left: 62%;
+  background-color: #cebef2;
+  animation: blink-44 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-44 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-45,
+html .light-45 {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  background-color: #74b567;
+  animation: blink-45 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-45 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-46,
+html .light-46 {
+  position: absolute;
+  top: 89%;
+  left: 75%;
+  background-color: #454d68;
+  animation: blink-46 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-46 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-47,
+html .light-47 {
+  position: absolute;
+  top: 28%;
+  left: 6%;
+  background-color: #69943c;
+  animation: blink-47 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-47 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-48,
+html .light-48 {
+  position: absolute;
+  top: 44%;
+  left: 35%;
+  background-color: #b8f138;
+  animation: blink-48 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-48 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-49,
+html .light-49 {
+  position: absolute;
+  top: 19%;
+  left: 46%;
+  background-color: #b63752;
+  animation: blink-49 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-49 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-50,
+html .light-50 {
+  position: absolute;
+  top: 9%;
+  left: 15%;
+  background-color: #fa3e14;
+  animation: blink-50 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-50 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-51,
+html .light-51 {
+  position: absolute;
+  top: 73%;
+  left: 4%;
+  background-color: #f1123f;
+  animation: blink-51 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-51 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-52,
+html .light-52 {
+  position: absolute;
+  top: 80%;
+  left: 1%;
+  background-color: #75842f;
+  animation: blink-52 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-52 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-53,
+html .light-53 {
+  position: absolute;
+  top: 94%;
+  left: 65%;
+  background-color: #3b1750;
+  animation: blink-53 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-53 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-54,
+html .light-54 {
+  position: absolute;
+  top: 11%;
+  left: 89%;
+  background-color: #f3b11b;
+  animation: blink-54 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-54 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-55,
+html .light-55 {
+  position: absolute;
+  top: 35%;
+  left: 58%;
+  background-color: #7e855f;
+  animation: blink-55 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-55 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-56,
+html .light-56 {
+  position: absolute;
+  top: 33%;
+  left: 46%;
+  background-color: #5075a1;
+  animation: blink-56 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-56 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-57,
+html .light-57 {
+  position: absolute;
+  top: 38%;
+  left: 11%;
+  background-color: #46416a;
+  animation: blink-57 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-57 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-58,
+html .light-58 {
+  position: absolute;
+  top: 28%;
+  left: 46%;
+  background-color: #c4161e;
+  animation: blink-58 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-58 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-59,
+html .light-59 {
+  position: absolute;
+  top: 58%;
+  left: 18%;
+  background-color: #fb2e5f;
+  animation: blink-59 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-59 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-60,
+html .light-60 {
+  position: absolute;
+  top: 16%;
+  left: 78%;
+  background-color: #607109;
+  animation: blink-60 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-60 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-61,
+html .light-61 {
+  position: absolute;
+  top: 24%;
+  left: 36%;
+  background-color: #c75771;
+  animation: blink-61 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-61 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-62,
+html .light-62 {
+  position: absolute;
+  top: 10%;
+  left: 96%;
+  background-color: #06c887;
+  animation: blink-62 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-62 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-63,
+html .light-63 {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  background-color: #ef6595;
+  animation: blink-63 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-63 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-64,
+html .light-64 {
+  position: absolute;
+  top: 80%;
+  left: 16%;
+  background-color: #1134a4;
+  animation: blink-64 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-64 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-65,
+html .light-65 {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  background-color: #3dbb67;
+  animation: blink-65 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-65 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-66,
+html .light-66 {
+  position: absolute;
+  top: 37%;
+  left: 32%;
+  background-color: #3c61a5;
+  animation: blink-66 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-66 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-67,
+html .light-67 {
+  position: absolute;
+  top: 94%;
+  left: 3%;
+  background-color: #6af6a4;
+  animation: blink-67 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-67 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-68,
+html .light-68 {
+  position: absolute;
+  top: 31%;
+  left: 31%;
+  background-color: #9696de;
+  animation: blink-68 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-68 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-69,
+html .light-69 {
+  position: absolute;
+  top: 99%;
+  left: 25%;
+  background-color: #718c43;
+  animation: blink-69 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-69 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-70,
+html .light-70 {
+  position: absolute;
+  top: 11%;
+  left: 99%;
+  background-color: #f1d678;
+  animation: blink-70 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-70 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-71,
+html .light-71 {
+  position: absolute;
+  top: 73%;
+  left: 91%;
+  background-color: #2b1e5d;
+  animation: blink-71 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-71 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-72,
+html .light-72 {
+  position: absolute;
+  top: 63%;
+  left: 1%;
+  background-color: #023fb4;
+  animation: blink-72 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-72 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-73,
+html .light-73 {
+  position: absolute;
+  top: 14%;
+  left: 70%;
+  background-color: #dc4476;
+  animation: blink-73 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-73 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-74,
+html .light-74 {
+  position: absolute;
+  top: 9%;
+  left: 37%;
+  background-color: #a2b7ad;
+  animation: blink-74 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-74 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-75,
+html .light-75 {
+  position: absolute;
+  top: 89%;
+  left: 59%;
+  background-color: #f10421;
+  animation: blink-75 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-75 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-76,
+html .light-76 {
+  position: absolute;
+  top: 58%;
+  left: 77%;
+  background-color: #3084ca;
+  animation: blink-76 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-76 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-77,
+html .light-77 {
+  position: absolute;
+  top: 73%;
+  left: 13%;
+  background-color: #6e83bb;
+  animation: blink-77 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-77 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-78,
+html .light-78 {
+  position: absolute;
+  top: 95%;
+  left: 63%;
+  background-color: #9d8499;
+  animation: blink-78 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-78 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-79,
+html .light-79 {
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  background-color: #f87a9c;
+  animation: blink-79 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-79 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-80,
+html .light-80 {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  background-color: #b09371;
+  animation: blink-80 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-80 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-81,
+html .light-81 {
+  position: absolute;
+  top: 65%;
+  left: 46%;
+  background-color: #b6022c;
+  animation: blink-81 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-81 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-82,
+html .light-82 {
+  position: absolute;
+  top: 43%;
+  left: 31%;
+  background-color: #708772;
+  animation: blink-82 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-82 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-83,
+html .light-83 {
+  position: absolute;
+  top: 21%;
+  left: 27%;
+  background-color: #987667;
+  animation: blink-83 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-83 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-84,
+html .light-84 {
+  position: absolute;
+  top: 71%;
+  left: 78%;
+  background-color: #9386d0;
+  animation: blink-84 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-84 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-85,
+html .light-85 {
+  position: absolute;
+  top: 38%;
+  left: 12%;
+  background-color: #17ca20;
+  animation: blink-85 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-85 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-86,
+html .light-86 {
+  position: absolute;
+  top: 17%;
+  left: 59%;
+  background-color: #d8a76e;
+  animation: blink-86 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-86 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-87,
+html .light-87 {
+  position: absolute;
+  top: 86%;
+  left: 67%;
+  background-color: #d7a222;
+  animation: blink-87 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-87 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-88,
+html .light-88 {
+  position: absolute;
+  top: 44%;
+  left: 66%;
+  background-color: #3bcfee;
+  animation: blink-88 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-88 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-89,
+html .light-89 {
+  position: absolute;
+  top: 80%;
+  left: 33%;
+  background-color: #a6433f;
+  animation: blink-89 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-89 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-90,
+html .light-90 {
+  position: absolute;
+  top: 91%;
+  left: 26%;
+  background-color: #f3c974;
+  animation: blink-90 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-90 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-91,
+html .light-91 {
+  position: absolute;
+  top: 2%;
+  left: 18%;
+  background-color: #447a71;
+  animation: blink-91 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-91 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-92,
+html .light-92 {
+  position: absolute;
+  top: 43%;
+  left: 95%;
+  background-color: #f6d124;
+  animation: blink-92 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-92 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-93,
+html .light-93 {
+  position: absolute;
+  top: 58%;
+  left: 65%;
+  background-color: #f74616;
+  animation: blink-93 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-93 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-94,
+html .light-94 {
+  position: absolute;
+  top: 79%;
+  left: 96%;
+  background-color: #375a57;
+  animation: blink-94 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-94 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-95,
+html .light-95 {
+  position: absolute;
+  top: 97%;
+  left: 80%;
+  background-color: #a6b0db;
+  animation: blink-95 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-95 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-96,
+html .light-96 {
+  position: absolute;
+  top: 13%;
+  left: 36%;
+  background-color: #8a5a0c;
+  animation: blink-96 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-96 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-97,
+html .light-97 {
+  position: absolute;
+  top: 93%;
+  left: 39%;
+  background-color: #3478cb;
+  animation: blink-97 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-97 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-98,
+html .light-98 {
+  position: absolute;
+  top: 84%;
+  left: 42%;
+  background-color: #b0137e;
+  animation: blink-98 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-98 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-99,
+html .light-99 {
+  position: absolute;
+  top: 55%;
+  left: 68%;
+  background-color: #efbe1d;
+  animation: blink-99 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-99 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+}
+body .light-100,
+html .light-100 {
+  position: absolute;
+  top: 65%;
+  left: 54%;
+  background-color: #f138bc;
+  animation: blink-100 0.5s ease-in infinite;
+  animation-delay: 0s;
+}
+@keyframes blink-100 {
+  from {
+    opacity: 0;
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
 }
 
-@media screen 
-  and (device-width: 480px) {
-  $font-size: 3em;
-    
-    .merry-chrismas{
-      &:after{
-        font:{
-          size:$font-size !important;
-        }
-      }
-      
-      &:before{
-        font:{
-          size:$font-size !important;
-        }
-      }
-    }
+.author {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 15px;
+  padding: 20px;
+  text-align: center;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  text-shadow: 2px 2px 3px rgba(120, 0, 20, 0.9);
+  font-style: italic;
+  padding: 1em;
+  color: #700;
+  color: rgba(120, 0, 20, 0.9);
 }
 
-@media screen 
-  and (device-width: 640px) {
-  $font-size: 4em;
-    
-    .merry-chrismas{
-      &:after{
-        font:{
-          size:$font-size !important;
-        }
-      }
-      
-      &:before{
-        font:{
-          size:$font-size !important;
-        }
-      }
-    }
+.author a, .author a:active, .author a:hover, .author a:visited {
+  text-decoration: none;
+  color: rgba(120, 0, 20, 0.9);
 }
 
-@media screen 
-  and (device-width: 720px) {
-  $font-size: 4em;
-    
-    .merry-chrismas{
-      &:after{
-        font:{
-          size:$font-size !important;
-        }
-      }
-      
-      &:before{
-        font:{
-          size:$font-size !important;
-        }
-      }
-    }
+.author .heart {
+  color: #e25555;
+  text-shadow: 2px 2px 3px #e25555;
+  font-size: 30px;
+}
+
+@media screen and (device-width: 360px) {
+  .merry-chrismas:after {
+    font-size: 3em !important;
+  }
+  .merry-chrismas:before {
+    font-size: 3em !important;
+  }
+}
+@media screen and (device-width: 480px) {
+  .merry-chrismas:after {
+    font-size: 3em !important;
+  }
+  .merry-chrismas:before {
+    font-size: 3em !important;
+  }
+}
+@media screen and (device-width: 640px) {
+  .merry-chrismas:after {
+    font-size: 4em !important;
+  }
+  .merry-chrismas:before {
+    font-size: 4em !important;
+  }
+}
+@media screen and (device-width: 720px) {
+  .merry-chrismas:after {
+    font-size: 4em !important;
+  }
+  .merry-chrismas:before {
+    font-size: 4em !important;
+  }
 }
 		</style>
 	</head>
