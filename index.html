@@ -1,8 +1,497 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <h1><strong>Người yêu bảo xóa ngay không người yêu đập chết</strong></h1>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Merry Xmas Gia Huệ</title>
+		<!--©2021 VANTBHP-->
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Bungee');
+$bg: #000000;
+$lights-width: 2;
+$lights-count: 100;
+$font-family:'Bungee', cursive;
+$font-size: 3em;
 
+@mixin light-border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+@mixin text-style{
+  $color : rgba(random(255), random(255), random(255), 1);
+  $color2 : rgba(random(255), random(255), random(255), 1);
+      display:block;
+      color: $color;
+      text-shadow: $color2 1px 1px 1px,
+        $color2 2px 2px 2px,
+        $color2 3px 3px 3px,
+        $color 0px 0px 20px;
+      text-align:center;
+      font:{
+        size:$font-size;
+        family:$font-family;
+      }
+  animation: flyin 3s 1s ease-out both infinite;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background : {
+    color: $bg;
+  }
+  
+  
+  
+ 
+  .merry-chrismas{
+    position:absolute;
+    
+  } 
+  
+  @keyframes flyin {
+  0%, 100% {
+    transform: perspective(0em) rotateX(0deg) translateY(0);
+  }
+  50% {
+    transform: perspective(0em) rotateX(0deg) translateY(-20px);
+  }
+  
+}
+
+@for $i from 1 through 8 {
+  
+  .merry-chrismas-#{$i}{
+   
+    &:before{
+      content:"Merry Christmas Gia Huệ";
+      @include text-style;
+   }
+    
+    &:after{
+      content:"";
+      @include text-style;
+   }
+    
+}
+  
+     .merry-chrismas-#{$i} {
+       animation: text-blink-#{$i} 0.5s linear alternate infinite;
+       animation-delay: $i * 0s;
+      }
+      .merry-chrismas-#{$i} {
+        @keyframes text-blink-#{$i} {
+           from { opacity:0; }
+           to { opacity:1; }
+      }
+    }
+  }
+  
+  
+
+  .lights {
+    width: $lights-width+px;
+    height: $lights-width+px;
+    @include light-border-radius(50%);
+  }
+
+  @for $i from 1 through $lights-count {
+    .light-#{$i} {
+      position: absolute;
+      top:  percentage(random(100)/100);
+      left: percentage(random(100)/100);
+      background: {
+        color: rgba(random(255), random(255), random(255), 1);
+      }
+      
+        animation: blink-#{$i} 0.5s ease-in infinite;
+        animation-delay: $i * 0s;
+      
+      @keyframes blink-#{$i} {
+      from { opacity: 0; transform: perspective(0em) rotateX(0deg) translateY(0); }
+      to { opacity: 1; transform: perspective(0em) rotateX(0deg) translateY(-20px); }
+       }
+    }
+  }
+}
+
+.author{
+        position:absolute;
+        bottom:0;
+        right:0;
+        font-size:15px;
+        padding:20px;
+        text-align:center;
+       
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        
+        text-shadow: 2px 2px 3px rgba(120,0,20,.9);
+        font-style:italic;
+        padding:1em;
+        color:#700;
+        color:rgba(120,0,20,.9);
+    }
+    .author a, .author a:active, .author a:hover, .author a:visited{
+        text-decoration:none;
+        color:rgba(120,0,20,.9);
+    }
+    .author .heart{
+        color: #e25555;
+         text-shadow: 2px 2px 3px #e25555;
+        font-size:30px;
+    }
+
+
+@media screen 
+  and (device-width: 360px) {
+  $font-size: 3em;
+    
+    .merry-chrismas{
+      &:after{
+        font:{
+          size:$font-size !important;
+        }
+      }
+      
+      &:before{
+        font:{
+          size:$font-size !important;
+        }
+      }
+    }
+}
+
+@media screen 
+  and (device-width: 480px) {
+  $font-size: 3em;
+    
+    .merry-chrismas{
+      &:after{
+        font:{
+          size:$font-size !important;
+        }
+      }
+      
+      &:before{
+        font:{
+          size:$font-size !important;
+        }
+      }
+    }
+}
+
+@media screen 
+  and (device-width: 640px) {
+  $font-size: 4em;
+    
+    .merry-chrismas{
+      &:after{
+        font:{
+          size:$font-size !important;
+        }
+      }
+      
+      &:before{
+        font:{
+          size:$font-size !important;
+        }
+      }
+    }
+}
+
+@media screen 
+  and (device-width: 720px) {
+  $font-size: 4em;
+    
+    .merry-chrismas{
+      &:after{
+        font:{
+          size:$font-size !important;
+        }
+      }
+      
+      &:before{
+        font:{
+          size:$font-size !important;
+        }
+      }
+    }
+}
+		</style>
+	</head>
+	<body>
+		<script>
+			
+var particles            = [];
+var canvas,
+    HEIGHT,
+    WIDTH,
+    ctx,
+    tick = 0,
+    points,
+        particlesPerExplosion = 50;
+        particlesMinSpeed     = 3,
+        particlesMaxSpeed     = 6,
+        particlesMinSize      = 1,
+        particlesMaxSize      = 3;
+
+			function generate(no)
+			{
+				var objs = [];
+				for(var i = 0; i < no; i++)
+				{
+					objs.push(new Particle());
+				}
+				
+				return objs;
+			}  
+
+
+// Particle
+function ExplosionParticle(x,y,color) {
+  this.x    = x;
+  this.y    = y;
+  this.color = color;
+  this.xv   = randInt(particlesMinSpeed, particlesMaxSpeed, false);
+  this.yv   = randInt(particlesMinSpeed, particlesMaxSpeed, false);
+  this.size = randInt(particlesMinSize, particlesMaxSize, true);
+  this.g    = 0.5;
+  this.coordinates = [];
+  this.coordinateCount = 2;
+  while( this.coordinateCount-- ) {
+    this.coordinates.push( [ this.x, this.y ] );
+  }
+}
+
+ExplosionParticle.prototype.update = function(i){
+
+                this.coordinates.pop();
+                this.coordinates.unshift([this.x,this.y]);
+                  if (this.size <= 1) {
+                    
+                  let remove =  particles.splice(i, 1);
+                    
+                    return;
+                  }
+                 // Update
+                  this.x += this.xv;
+                  this.y += this.yv + this.g;
+                  this.size -= .1;
+}
+
+ExplosionParticle.prototype.draw = function(i){
+                  offctx.beginPath();
+                  offctx.moveTo( this.coordinates[ this.coordinates.length - 1][ 0 ], this.coordinates[ this.coordinates.length - 1][ 1 ] );
+                  offctx.lineTo( this.x, this.y );
+                  offctx.strokeStyle = this.color;
+                  offctx.stroke();
+                  offctx.arc(this.x, this.y, this.size, Math.PI * 2, 0, false);
+                  offctx.closePath();
+                  offctx.fillStyle = this.color;
+                  offctx.fill();
+}
+
+
+// Returns an random integer, positive or negative
+// between the given value
+function randInt(min, max, positive) {
+
+  let num;
+  if (positive === false) {
+    num = Math.floor(Math.random() * max) - min;
+    num *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
+  } else {
+    num = Math.floor(Math.random() * max) + min;
+  }
+
+  return num;
+
+}
+		
+function randomBetween(min, max) {
+			if (min < 0) {
+				return min + Math.random() * (Math.abs(min)+max);
+			}else {
+				return min + Math.random() * max;
+			}
+		}
+
+
+			function Particle()
+			{
+        //
+				this.ox = WIDTH/2;
+				this.oy = HEIGHT/2;
+				this.x = WIDTH/2;
+				this.y = HEIGHT/2;
+        this.tx = ~~randomBetween(0,WIDTH);
+        this.ty = ~~randomBetween(0,HEIGHT);
+       
+        	this.coordinates = [];
+	        this.coordinateCount = 3;
+          while( this.coordinateCount-- ) {
+            this.coordinates.push( [ this.x, this.y ] );
+          }
+				this.radius = 2;
+	      
+        	this.speed = 2;
+	        this.acceleration = 1.05;
+				
+        this.color = "rgba("+Math.floor(randomBetween(0,255))+","+Math.floor(randomBetween(0,255))+","+Math.floor(randomBetween(0,255))+",1)";
+        
+			}
+      
+      
+      Particle.prototype.update = function( index ) {
+
+        this.coordinates.pop();
+        this.coordinates.unshift([this.x,this.y]);
+        // speed up the firework
+        this.speed *= this.acceleration;
+
+        // get the current velocities based on angle and speed
+        var vx = Math.cos( this.angle() ) * this.speed,
+            vy = Math.sin( this.angle() ) * this.speed;
+    
+
+        // if the distance traveled, including velocities, is greater than the initial distance to the target, then the target has been reached
+        if( this.distanceTraveled() >= this.distanceToTarget() ) {
+          this.generateExplosion();
+          // remove the firework, use the index passed into the update function to determine which to remove
+           let remove = points.splice( index, 1 );
+          
+          
+           
+          
+        } else {
+          // target not reached, keep traveling
+          this.x += vx;
+          this.y += vy;
+        }
+      }
+      
+      Particle.prototype.distanceToTarget = function(){
+        
+          var dx = this.ox - this.tx,
+              dy = this.oy - this.ty;
+          return Math.sqrt(dx * dx + dy * dy);
+      }
+      
+     Particle.prototype.distanceTraveled = function() {
+          var dx = this.ox - this.x,
+              dy = this.oy - this.y;
+          return Math.sqrt(dx * dx + dy * dy);
+      }
+     
+      
+      Particle.prototype.angle = function(){
+        return Math.atan2( this.ty - this.oy, this.tx - this.ox );
+      }
+      
+      Particle.prototype.generateExplosion = function () {
+     
+        for (let i = 0; i < particlesPerExplosion; i++) {
+                particles.push(
+                  new ExplosionParticle(this.tx,this.ty,this.color)
+                );
+            }
+        
+      }
+			
+			Particle.prototype.draw = function(){
+       	    offctx.beginPath();  
+            offctx.fillStyle = this.color;
+        	  offctx.moveTo( this.coordinates[ this.coordinates.length - 1][ 0 ], this.coordinates[ this.coordinates.length - 1][ 1 ] );
+            offctx.lineTo( this.x, this.y );
+            offctx.strokeStyle = this.color;
+            offctx.stroke();
+			    	offctx.arc(this.x,this.y,this.radius,Math.PI*2,false);
+            offctx.fill();
+            offctx.closePath();
+			}
+  
+		
+      
+			var render  = function(){
+				//ctx.globalCompositeOperation = 'destination-out';
+        offctx.fillStyle = "rgba(0,0,0,0.3)";
+				offctx.fillRect(0,0,WIDTH,HEIGHT);
+       
+				//ctx3.clearRect(0,0,WIDTH,HEIGHT);
+				
+        //ctx.globalCompositeOperation = 'lighter';
+		
+        let i = particles.length;
+        while( i-- ) {
+          particles[i].draw();
+           particles[i].update(i);
+        }
+        
+         i = points.length;
+        while( i-- ) {
+          points[ i ].draw();
+          points[ i ].update( i );
+        }
+         ctx.putImageData(offctx.getImageData(0,0,WIDTH,HEIGHT),0,0);
+       if(tick >= 5)
+          {
+                points.push(new Particle());
+            points.push(new Particle());
+            points.push(new Particle());
+            points.push(new Particle());
+            points.push(new Particle());
+            tick = 0;
+          }
+          ++tick;
+      
+                 
+        
+				requestAnimationFrame(render);
+			};
+
+
+		window.onload = function(){
+			 canvas = document.createElement("canvas");
+			    HEIGHT = canvas.height = window.innerHeight;
+			    WIDTH = canvas.width = window.innerWidth;
+				ctx = canvas.getContext("2d");
+    
+      offcanvas = document.createElement("canvas");
+				offctx = offcanvas.getContext("2d");
+          offcanvas.height = window.innerHeight;
+			    offcanvas.width = window.innerWidth;
+      
+				document.body.appendChild(canvas);
+			points = generate(50);  
+			render();
+		
+		}
+
+		</script>
+		- for(var i = 1; i < 300; i++) {
+  .lights(class='light-'+i)
+- }
+
+- for(var i = 1; i < 8; i++) {
+  .merry-chrismas(class='merry-chrismas-'+i)
+- }
+
+.author
+  a(href='http://riazxrazor.in/')
+    | Made with 
+    span.heart ♥
+    |  by Riaz Laskar
+  div
+		
+	</body>
 </html>
